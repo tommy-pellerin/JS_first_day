@@ -44,9 +44,9 @@ else {
 //   // console.log(books[book])
 //   let rentingState = books[book].rented
 //   console.log(rentingState)
-//   rentingArray.push(rentingState)
-  
+//   rentingArray.push(rentingState)  
 // }
+
 // let themax = Math.max(...rentingArray)
 // console.log("Le nombre d'emprunt max est : " + themax)
 // //cherche le livre dont l'attribut rented est égale à la valeur max
