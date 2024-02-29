@@ -33,6 +33,9 @@ else {
 }
 */
 
+
+
+
 //Le livre le plus enprunté
 //Récupé le chiffre le plus élevé
 
@@ -50,6 +53,9 @@ else {
 // let popularBook = books.find(book => book.rented === themax);
 // console.log(popularBook.title);
 
+
+
+
 //Le livre le moins emprunté
 //une autre méthode pour extraire les valeurs
 // let rentingsArray = books.map(book => book.rented);
@@ -61,4 +67,51 @@ else {
 // let unpopularBook = books.find(book => book.rented === themin);
 // console.log("Le livre le moins emprunté est : " + unpopularBook.title)
 
+
+
+
+//ID 873495
+// let statement = books.find(book=>book.id === 873495);
+// console.log(statement.title)
+
+
+
+//Supprime le livre avec l'ID: 133712
+// let toDeleteBookIndex = books.findIndex(book => book.id === 133712);
+// console.log(toDeleteBookIndex);
+// console.log(books);
+//delete books[toDeleteBookIndex]; //Deconseillé car la valeur est passé à empty mais n'est pas supprimé du tableau
+//2 méthodes possible :
+//1.Supprime un élement
+// books.splice(toDeleteBookIndex,1); //supprime et retourn la valeur supprimée
+// console.log(books);
+
+//2.Cette méthode filtre ne supprime pas, il fait une copie du tableau en excluant l'élément qu'on ne veut pas, bonus, elle trie le tableau dans l'ordre alphabétique
+let toDeleteBook = books.find(book=>book.id === 133712);
+console.log(toDeleteBook);
+let newbooks = books.filter(book => book !== toDeleteBook);
+console.log(newbooks);
+
+//trie
+//il existe plusieur méthode de trie
+//1.une méthode de trie des élément non ASCII
+sortedNewbooks = newbooks.sort((a,b) => a.title.localeCompare(b.title));
+console.log(sortedNewbooks);
+
+//2.trie par ordre alphabétique
+// books.sort((a, b) => {
+//   const nameA = a.title.toUpperCase(); // ignore upper and lowercase
+//   const nameB = b.title.toUpperCase(); // ignore upper and lowercase
+//   if (nameA < nameB) {
+//     return -1;
+//   }
+//   if (nameA > nameB) {
+//     return 1;
+//   }
+
+//   // names must be equal
+//   return 0;
+// });
+
+// console.log(books);
 
